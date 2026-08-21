@@ -1,0 +1,9 @@
+/* Seeing How The Link Practice From html Works - line 85-89 */
+.link a{
+    color: magenta;
+    text-decoration: none;
+}
+/* 
+.link a:visited{
+    color: black;
+} */
