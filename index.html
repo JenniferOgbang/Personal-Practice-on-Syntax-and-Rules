@@ -2,16 +2,14 @@
 
 EXTERNAL LINK
     a href="https://google.com"> Go to Google </a>
-
+Here:
     <a> - anchor (tells the browser it's a link)
     href - hypertext reference (where the link go)
     Go to Google - what the user sees
     </a> - closes the tag
-
 More Examples
     <a href="https://youtube.com"> YouTube </a>
     <a href="https://github.com"> GitHub </a>
-
 External link in a new tab
     <a href="https://google.com" target="_blank"> Go to Google </a>
     target - open in a new browser
@@ -34,4 +32,26 @@ LINKING TO SECTION ON THE SAME PAGE
     somewhere else <a href="#about"> Go to About Us </a>
     This means: Take me to the place called about.
     # is used when referrign to an id
+Examples
+    <nav> 
+        <a href="#about"> About Us </a>
+        <a href="#menu"> Our Menu </a>
+        <a href="#explore"> Explore </a>
+        <a href="#signup"> Create an Account </a>
+    </nav>
+    So "id" means we're giving it a unique identity and "#" means we're redirecting to the id.
 
+
+
+EMAIL LINK
+    <a href="mailto:hello@example.com?subject=Hello&body=I%20would%20like%20to%20know%20more.">
+    Contact Us </a>
+Here:
+    mailto: → this is an email link
+    hello@example.com → recipient
+    ?subject=Hello → email subject
+    &body=... → email body
+    %20 where there are spaces - Because spaces need to be encoded inside a URL.
+Examples
+    <a href="mailto:hello.jenniferogbang@gmail.com?subject=Hello%20Jennifer&body=Hi%20Jennifer%2C">
+    Email Me </a>
