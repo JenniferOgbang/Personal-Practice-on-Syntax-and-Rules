@@ -585,3 +585,96 @@ let button = document.getElementById("btn2");
 button.addEventListener("mouseover",()=>{
     alert("Click here for help ")
 })
+
+
+
+/* DOM PRACTICE */
+/* EXERCISE 1: SELECTING ELEMENTS
+   The DOM lets you "grab" any element on the page by
+   its tag, class, or id, then read or change it. */
+const logo = document.querySelector(".logo");
+console.log(logo.textContent); // should log "Selah" in your browser console
+
+/* EXERCISE 2: CHANGING TEXT
+   Try changing the logo text after 2 seconds. */
+setTimeout(() => {
+    logo.textContent = "Selah 🙏";
+}, 2000);
+
+/* EXERCISE 3: CHANGING STYLES DIRECTLY
+   Make the eyebrow text (the small caps line above the h1) orange. */
+const eyebrow = document.querySelector(".eyebrow");
+eyebrow.style.color = "#c9922f";
+
+/* EXERCISE 4: EVENT LISTENERS — click
+   Make "Start Studying" (the header button) show an alert
+   instead of just jumping to the section. */
+const headerButton = document.querySelector(".header-button");
+headerButton.addEventListener("click", (e) => {
+    console.log("Header button clicked!");
+    });
+    // Try uncommenting this next line to see a popup:
+    // alert("Let's start studying!");
+
+/* EXERCISE 5: TOGGLING A CLASS (very common real-world pattern) */
+const menuToggle = document.querySelector(".menu-toggle");
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+    });
+}
+
+
+/* EXERCISE 6: LOOPING THROUGH MULTIPLE ELEMENTS */
+const studyCards = document.querySelectorAll(".study-card");
+
+studyCards.forEach((card) => {
+    const heading = card.querySelector("h3");
+    console.log("Card found:", heading.textContent);
+});
+
+
+/* EXERCISE 7: ADDING A HOVER EFFECT VIA JS (instead of CSS)
+   Practice mouseenter / mouseleave events. */
+studyCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+        card.style.borderColor = "#c9922f";
+    });
+    card.addEventListener("mouseleave", () => {
+        card.style.borderColor = "#dcdcdc";
+    });
+});
+
+
+/* EXERCISE 8: CREATING A NEW ELEMENT FROM SCRATCH
+   Practice building a 4th study card entirely with JS
+   and inserting it into the page. */
+const cardsContainer = document.querySelector(".cards");
+
+if (cardsContainer) {
+    const newCard = document.createElement("article");
+    newCard.className = "study-card";
+    newCard.innerHTML = `
+        <div class="icon">🕊️</div>
+        <h3>Rest</h3>
+        <p>Let Scripture bring peace to your day.</p>
+    `;
+    cardsContainer.appendChild(newCard);
+}
+
+
+/* EXERCISE 9: SIMPLE FORM-STYLE INTERACTION
+   Change the CTA heading text based on time of day.
+   Good practice with Date() + conditional logic + DOM together. */
+const ctaHeading = document.querySelector(".cta-section h2");
+
+if (ctaHeading) {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+        ctaHeading.textContent = "Start your morning in the Word.";
+    } else if (hour < 18) {
+        ctaHeading.textContent = "Take a study break this afternoon.";
+    } else {
+        ctaHeading.textContent = "End your day in Scripture.";
+    }
+}
